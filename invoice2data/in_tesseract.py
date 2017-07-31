@@ -8,7 +8,7 @@ def to_text(path):
     convert = "convert -density 350 %s -depth 8 tiff:-" % (path)
     p1 = subprocess.Popen(convert.split(' '), stdout=subprocess.PIPE)
 
-    p2 = subprocess.Popen("tesseract stdin stdout".split(' '),
+    p2 = subprocess.Popen("tesseract stdin stdout -l eng+deu".split(' '),
                           stdin=p1.stdout, stdout=subprocess.PIPE)
     out, err = p2.communicate()
 
