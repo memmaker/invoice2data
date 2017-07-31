@@ -9,6 +9,7 @@ import pkg_resources
 import invoice2data.in_pdftotext as pdftotext
 from invoice2data.template import read_templates
 from invoice2data.out_csv import invoices_to_csv
+import invoice2data.in_tesseract as image_to_text
 import logging
 
 logger = logging.getLogger(__name__)
