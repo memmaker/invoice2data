@@ -25,9 +25,9 @@ def extract_data(invoicefile, templates=None, debug=False):
     charcount = len(extracted_str)
     logger.debug('number of char in pdf2text extract: %d', charcount)
     # Disable Tesseract for now.
-    #if charcount < 40:
-        #logger.info('Starting OCR')
-        #extracted_str = image_to_text.to_text(invoicefile)
+    if charcount < 40:
+        logger.info('Starting OCR')
+        extracted_str = image_to_text.to_text(invoicefile)
     logger.debug('START pdftotext result ===========================')
     logger.debug(extracted_str)
     logger.debug('END pdftotext result =============================')
